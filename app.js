@@ -98,19 +98,19 @@ function Wyspa(plik) {
   };
 }
 
-function mousePressed() {
+function touchStarted() {
   locked = true;
   xOffset = mouseX - bx;
   yOffset = mouseY - by;
 }
 
-function mouseDragged() {
+function touchMoved() {
   if (locked) {
     bx = mouseX - xOffset;
     by = mouseY - yOffset;
   }
 }
 
-function mouseReleased() {
+function touchEnded() {
   locked = false;
-}s
+}
