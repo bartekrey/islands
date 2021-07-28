@@ -4,10 +4,11 @@ let  bx = 0;
 let  by = 0;
 let  plywX = 0.0;
 let  plywY = 0.0;
+
 if (screen.width<screen.height) {
-  let u = screen.width/24
+  let u = screen.width/24;
 } else {
-  let u = screen.height/24
+  let u = screen.height/24;
 }
 
 
