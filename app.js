@@ -3,8 +3,7 @@
 }*/
 
 function setup() {
-  //createCanvas(windowWidth, windowHeight);
-  createCanvas(1920, 1280);
+  createCanvas(windowWidth, windowHeight);
   textFont("Arial");
   textAlign(CENTER);
   textSize(24);
@@ -12,8 +11,7 @@ function setup() {
 
 function draw() {
   background(220);
-  //translate(windowWidth / 2, windowHeight / 2);
-  translate()
+  translate(windowWidth / 2, windowHeight / 2);
 
   fill(32);
   noStroke();
@@ -39,10 +37,10 @@ function draw() {
 
 }
 
-/*
+
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
-}*/
+}
 
 function plusik(x, y) {
   noFill();
