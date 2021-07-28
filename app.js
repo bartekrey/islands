@@ -2,6 +2,10 @@ let shapes = [];
 let islands = [];
 let  bx = 0;
 let  by = 0;
+let  plywX = 0.0;
+let  plywY = 0.0;
+let u = screen.width/24
+
 
 function preload() {
   for (i = 0; i <= 11; i++) {
@@ -14,27 +18,27 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   textFont("Averia Sans Libre");
   textAlign(CENTER);
-  textSize(24);
 
   for (i = 0; i < 12; i++) {
-    islands[i] = new Wyspa (shapes[i]);
+    islands[i] = new Wyspa (shapes[i], );
   }
 
 }
 
 function draw() {
+  textSize(u);
   background(224);
   translate(windowWidth / 2+bx, windowHeight /2 +by);
 
   fill(32);
   noStroke();
-  text("Archipelago", 0, 0);
-  plusik = new Plusik(0, 20);
+  text("Archipelago", noise(plywX)*10, 0);
+  plusik = new Plusik(noise(plywX)*10, u);
 
   noFill();
   strokeWeight(0.5);
   stroke(224, 32, 32);
-  let diameter = 200;
+  let diameter = u*7;
   circle(0, 0, diameter);
 
   for (let i = 1; i <= 12; i++) {
@@ -44,13 +48,16 @@ function draw() {
   for (let i = 1; i <= 12; i++) {
     push();
     rotate(i * (TWO_PI / 12));
-    line(0, diameter / 2, 0, windowHeight);
+    line(0, diameter / 2, 0, windowHeight*2);
     pop();
   }
 
   for (i = 0; i < 12; i++) {
     islands[i].draw();
   }
+
+  plywX = plywX + 0.01;
+  plywY = plywY + 0.01;
 }
 
 
@@ -67,7 +74,7 @@ function Plusik(x, y) {
   line(x - 5, y, x + 5, y);
 }
 
-function Wyspa(plik) {
+function Wyspa(plik, size) {
   this.plik = plik;
   this.width = plik.width;
   this.height = plik.height;
