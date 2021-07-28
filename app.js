@@ -29,10 +29,10 @@ function setup() {
 
 function draw() {
 
-  if (windowWidth<windowHeight) {
-    let u = windowWidth/24;
+  if (windowWidth > windowHeight) {
+     u = windowWidth/24;
   } else {
-    let u = windowHeight/24;
+     u = windowHeight/24;
   }
 
   textSize(u);
@@ -62,7 +62,7 @@ function draw() {
   }
 
   for (i = 0; i < 12; i++) {
-    islands[i].draw(u*3);
+    islands[i].draw(u*5);
   }
 
   plywX = plywX + 0.01;
@@ -73,11 +73,6 @@ function draw() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
-  if (windowWidth<windowHeight) {
-    let u = windowWidth/24;
-  } else {
-    let u = windowHeight/24;
-  }
 }
 
 function Plusik(x, y) {
@@ -118,4 +113,4 @@ function mouseDragged() {
 
 function mouseReleased() {
   locked = false;
-}
+}s
