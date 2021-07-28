@@ -5,11 +5,7 @@ let  by = 0;
 let  plywX = 0.0;
 let  plywY = 0.0;
 
-if (screen.width<screen.height) {
-  let u = screen.width/24;
-} else {
-  let u = screen.height/24;
-}
+
 
 
 function preload() {
@@ -20,17 +16,25 @@ function preload() {
 }
 
 function setup() {
+
   createCanvas(windowWidth, windowHeight);
   textFont("Averia Sans Libre");
   textAlign(CENTER);
 
   for (i = 0; i < 12; i++) {
-    islands[i] = new Wyspa (shapes[i], );
+    islands[i] = new Wyspa (shapes[i]);
   }
 
 }
 
 function draw() {
+
+  if (windowWidth<windowHeight) {
+    let u = windowWidth/24;
+  } else {
+    let u = windowHeight/24;
+  }
+
   textSize(u);
   background(224);
   translate(windowWidth / 2+bx, windowHeight /2 +by);
@@ -58,7 +62,7 @@ function draw() {
   }
 
   for (i = 0; i < 12; i++) {
-    islands[i].draw();
+    islands[i].draw(u*3);
   }
 
   plywX = plywX + 0.01;
@@ -69,6 +73,11 @@ function draw() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
+  if (windowWidth<windowHeight) {
+    let u = windowWidth/24;
+  } else {
+    let u = windowHeight/24;
+  }
 }
 
 function Plusik(x, y) {
@@ -79,17 +88,17 @@ function Plusik(x, y) {
   line(x - 5, y, x + 5, y);
 }
 
-function Wyspa(plik, size) {
+function Wyspa(plik) {
   this.plik = plik;
   this.width = plik.width;
   this.height = plik.height;
   this.x = random(-windowWidth , windowWidth);
   this.y = random(-windowHeight, windowHeight);
 
-  this.draw = function () {
+  this.draw = function (size) {
     push();
     translate(-this.width / 2, -this.height / 2);
-    image(this.plik, this.x, this.y);
+    image(this.plik, this.x, this.y, size, size);
     pop();
   };
 }
