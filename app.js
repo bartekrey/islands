@@ -42,7 +42,7 @@ function draw() {
   fill(32);
   noStroke();
   text("Archipelago", noise(plywX)*10, 0);
-  plusik = new Plusik(noise(plywX)*10, u);
+  plusik = new Plusik(noise(plywX)*10, u, u);
 
   noFill();
   strokeWeight(0.5);
@@ -75,12 +75,12 @@ function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
 
-function Plusik(x, y) {
+function Plusik(x, y, size) {
   noFill();
   stroke(32);
-  circle(x, y, 20);
-  line(x, y - 5, x, y + 5);
-  line(x - 5, y, x + 5, y);
+  circle(x, y, size);
+  line(x, y - u/4, x, y + u/4);
+  line(x - u/4, y, x + u/4, y);
 }
 
 function Wyspa(plik) {
@@ -112,5 +112,22 @@ function touchMoved() {
 }
 
 function touchEnded() {
+  locked = false;
+}
+
+function mousePressed() {
+  locked = true;
+  xOffset = mouseX - bx;
+  yOffset = mouseY - by;
+}
+
+function mouseDragged() {
+  if (locked) {
+    bx = mouseX - xOffset;
+    by = mouseY - yOffset;
+  }
+}
+
+function mouseReleased() {
   locked = false;
 }
