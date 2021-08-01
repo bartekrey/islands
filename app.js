@@ -19,7 +19,7 @@ function preload() {
 
 function setup() {
   pixelDensity(1)
-  
+
   canvas = createCanvas(window.innerWidth, window.innerHeight);
   canvas.parent("body");
 
@@ -51,7 +51,6 @@ function draw() {
 
   noFill();
   strokeWeight(0.5);
-  stroke(224, 32, 32);
   let diameter = u*7;
   circle(0, 0, diameter);
 
