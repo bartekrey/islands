@@ -5,7 +5,9 @@ let  by = 0;
 let  plywX = 0.0;
 let  plywY = 0.0;
 
-
+function windowResized(){
+  resizeCanvas(window.innerWidth, window.innerHeight);
+}
 
 
 function preload() {
@@ -17,7 +19,11 @@ function preload() {
 
 function setup() {
 
-  createCanvas(windowWidth, windowHeight);
+  canvas = createCanvas(window.innerWidth, window.innerHeight);
+  canvas.parent ("body");
+  canvas.position(0, 0);
+  canvas.style('z-index', '-10');
+
   textFont("Averia Sans Libre");
   textAlign(CENTER);
 
@@ -67,12 +73,6 @@ function draw() {
 
   plywX = plywX + 0.01;
   plywY = plywY + 0.01;
-}
-
-
-
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
 }
 
 function Plusik(x, y, size) {
