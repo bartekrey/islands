@@ -20,7 +20,7 @@ function preload() {
 function setup() {
 
   canvas = createCanvas(window.innerWidth, window.innerHeight);
-  canvas.parent("body");
+  canvas.parent("mapa");
 
   textFont("Averia Sans Libre");
   textAlign(CENTER);

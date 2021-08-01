@@ -16,6 +16,7 @@ canvas {
    z-index: -10;
 }
 
+
 html, body {
   height: 100%;
 }
@@ -29,4 +30,15 @@ body {
 
   /* This centers our sketch vertically. */
   align-items: center;
+}
+
+.mapa {
+    margin: 0;
+    display: flex;
+
+    /* This centers our sketch horizontally. */
+    justify-content: center;
+
+    /* This centers our sketch vertically. */
+    align-items: center;
 }
