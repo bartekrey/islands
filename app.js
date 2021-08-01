@@ -18,7 +18,8 @@ function preload() {
 }
 
 function setup() {
-
+  pixelDensity(1)
+  
   canvas = createCanvas(window.innerWidth, window.innerHeight);
   canvas.parent("body");
 
