@@ -1,7 +1,7 @@
 .legenda {
   position: fixed;
-  margin-left: 1em;
-  margin-bottom: 1em;
+  left: 1em;
+  bottom: 1em;
   padding: 0 1em;
   max-width: 21em;
   display: flex;
