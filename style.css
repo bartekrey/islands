@@ -1,13 +1,13 @@
-main {
+.legenda {
   position: fixed;
   margin-left: 1em;
   margin-bottom: 1em;
-}
 
-.legenda {
   max-width: 21em;
   display: flex;
   outline-style: solid;
+  outline-width: 1px;
+  background-color: #ffffff;
 }
 
 canvas {
