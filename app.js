@@ -20,9 +20,7 @@ function preload() {
 function setup() {
 
   canvas = createCanvas(window.innerWidth, window.innerHeight);
-  canvas.parent ("body");
-  canvas.position(0, 0);
-  canvas.style('z-index', '-10');
+  canvas.parent("body");
 
   textFont("Averia Sans Libre");
   textAlign(CENTER);
