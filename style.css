@@ -19,27 +19,27 @@
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  align-content: space-between;
+  align-content: center;
 }
 
 .change {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  align-content: space-between;
+  align-content: center;
 }
 
 .lang {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  align-content: space-around;
+  align-content: center;
 }
 
 canvas {
