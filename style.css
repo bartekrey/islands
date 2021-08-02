@@ -39,7 +39,7 @@
   border-bottom: 1px solid;
 }
 
-.menu {
+.subpages {
   display: flex;
   flex-flow: row nowrap;
 
