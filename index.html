@@ -61,10 +61,11 @@ let opened = true;
 $("#nav-icon").click(function(){
   if (opened) {
     $("#nav-icon").text("close")
+    opened = false;
   } else {
     $("#nav-icon").text("expand_more")
+    opened = true;
   }
-  opened = false;
   $(".menu").toggle();
 });
 
