@@ -11,6 +11,8 @@ function windowResized(){
 
 
 function preload() {
+  soundFormats('ogg', 'mp3');
+  ocean = loadSound('sea-sound.mp3');
   for (i = 0; i <= 11; i++) {
     numerek = i + 1;
     shapes[i] = loadImage("./shapes/" + numerek + ".png");
@@ -19,7 +21,7 @@ function preload() {
 
 function setup() {
   pixelDensity(1)
-
+  ocean.loop();
   canvas = createCanvas(window.innerWidth, window.innerHeight);
   canvas.parent("body");
 
