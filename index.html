@@ -55,9 +55,14 @@
 </html>
 
 <script>
-
+let opened = True;
 $("#nav-icon").click(function(){
-  $("#nav-icon").text("expand_more")
+  if (opened) {
+    $("#nav-icon").text("close")
+  } else {
+    $("#nav-icon").text("expand_more")
+  }
+  opened = False;
   $(".menu").toggle();
 });
 

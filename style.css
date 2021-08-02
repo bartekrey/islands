@@ -41,14 +41,13 @@
 
 .subpages {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
 
   justify-content: space-around;
   align-items: center;
   align-content: center;
 
   padding: 0.5em;
-  border-bottom: 1px solid;
 }
 
 .lang {
