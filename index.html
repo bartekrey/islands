@@ -23,7 +23,7 @@
 
 <body id="body">
   <div class="legenda">
-    <span>Archipelago of Animals in Helsinki</span><span class="material-icons-outlined">clear</span>
+    <span id="island_name">Archipelago of Animals in Helsinki</span> <span class="material-icons-outlined" id="nav_icon">close</span>
   </div>
   <header>
   </header>
@@ -39,4 +39,10 @@
 </html>
 
 <script>
+
+$("#nav_icon").click(function(){
+  $("#nav_icon").text("expand_more")
+});
+
+
 </script>
