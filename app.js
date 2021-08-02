@@ -21,6 +21,7 @@ function preload() {
 
 function setup() {
   pixelDensity(1)
+  ocean.setVolume(0.5);
   ocean.loop();
   canvas = createCanvas(window.innerWidth, window.innerHeight);
   canvas.parent("body");
