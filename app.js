@@ -72,11 +72,20 @@ function draw() {
   fill(32);
   noStroke();
   text("Listen to\nthe Islands", noise(plywX)*10, 0);
+  plusik = new Plusik(noise(plywX)*10, u, u);
 
   plywX = plywX + 0.01;
   plywY = plywY + 0.01;
 
 
+}
+
+function Plusik(x, y, size) {
+  noFill();
+  stroke(32);
+  circle(x, y, size);
+  line(x, y - u/4, x, y + u/4);
+  line(x - u/4, y, x + u/4, y);
 }
 
 function Wyspa(plik) {
