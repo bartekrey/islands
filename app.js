@@ -71,7 +71,7 @@ function draw() {
 
   fill(32);
   noStroke();
-  text("Archipelago", noise(plywX)*10, 0);
+  text("Listen to the Islands", noise(plywX)*10, 0);
   plusik = new Plusik(noise(plywX)*10, u, u);
 
   plywX = plywX + 0.01;
