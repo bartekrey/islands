@@ -4,6 +4,7 @@ let  bx = 0;
 let  by = 0;
 let  plywX = 0.0;
 let  plywY = 0.0;
+let ocean;
 
 function windowResized(){
   resizeCanvas(window.innerWidth, window.innerHeight);
@@ -17,7 +18,7 @@ function preload() {
     shapes[i] = loadImage("./shapes/" + numerek + ".png");
   }
   soundFormats('ogg', 'mp3');
-  let ocean = loadSound('sea-sound.mp3', );
+  ocean = loadSound('sea-sound.mp3', );
 }
 
 function setup() {
@@ -32,7 +33,7 @@ function setup() {
   for (i = 0; i < 12; i++) {
     islands[i] = new Wyspa (shapes[i]);
   }
-  
+
   ocean.loop(0, 1, 0.5);
 }
 
