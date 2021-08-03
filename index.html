@@ -104,14 +104,14 @@
   function draw() {
 
     if (windowWidth >= 1920) {
-       u = windowWidth/48;
+       u = windowWidth/96;
     } else if ( windowWidth >= 1280 && windowWidth < 1920 ) {
-       u = windowHeight/24;
+       u = windowHeight/48;
     } else if (windowWidth >= 720 && windowWidth < 1280 ) {
-      u = windowHeight/12;
+      u = windowHeight/24;
     } else if (windowWidth < 720 ) {
-      u = windowHeight/6;
-    } 
+      u = windowHeight/12;
+    }
 
     background(224);
     translate(windowWidth / 2+bx, windowHeight /2 +by);
