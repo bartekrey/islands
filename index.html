@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <link rel="icon" type="image/x-icon" href="./favicon.ico"/>
+  <link rel="icon" type="image/x-icon" href="./favicon.ico" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,59 +26,41 @@
 
 <body id="body">
 
-<div class="player">
-  <div id="recording-title"><span>My and my dog<span></div>
-
-    <div id="controls">
-
-      <span class="material-icons-outlined md-48" id="nav-icon">skip_previous</span>
-
-      <span class="material-icons-outlined md-48" id="nav-icon">pause</span>
-
-      <span class="material-icons-outlined md-48" id="nav-icon">play_arrow</span>
-
-      <span class="material-icons-outlined md-48" id="nav-icon">skip_next</span>
-
-</div>
-
-</div>
-
-
   <div class="legenda">
 
     <div class="title"><span id="island-name">Archipelago of <span id="subject">Animals</span> in <span id="region">Helsinki</span></span> <span class="material-icons-outlined md-48" id="nav-icon">close</span>
-  </div>
-
-  <div class="menu">
-    <div class="change">
-      <span id="change-subject">Change subject</span><span id="change-region">Change region</span>
     </div>
 
-    <div class="subjects-browse">
-    </div>
+    <div class="menu">
+      <div class="change">
+        <span id="change-subject">Change subject</span><span id="change-region">Change region</span>
+      </div>
 
-    <div class="regions-browse">
-    </div>
+      <div class="subjects-browse">
+      </div>
 
-    <div class="switch">
-    </div>
+      <div class="regions-browse">
+      </div>
 
-    <div class="subpages">
-      <span>About Listen to the Islands</br></span>
-      <span>Contribute</br></span>
-      <span>Radio</br></span>
-    </div>
+      <div class="switch">
+      </div>
 
-    <div class="lang">
-      <span>EN</span>
-      <span>FI</span>
-      <span>SV</span>
-      <span>EE</span>
-      <span>NO</span>
-      <span>DK</span>
-    </div>
+      <div class="subpages">
+        <span>About Listen to the Islands</br></span>
+        <span>Contribute</br></span>
+        <span>Radio</br></span>
+      </div>
 
-</div>
+      <div class="lang">
+        <span>EN</span>
+        <span>FI</span>
+        <span>SV</span>
+        <span>EE</span>
+        <span>NO</span>
+        <span>DK</span>
+      </div>
+
+    </div>
   </div>
 
 </body>
@@ -86,24 +68,40 @@
 </html>
 
 <script>
-let opened = true
+  let opened = true
 
-$("#nav-icon").click(function(){
-  if (opened) {
-    $("#nav-icon").text("expand_more")
-    opened = false;
-  } else {
-    $("#nav-icon").text("close")
-    opened = true;
-  }
-  $(".menu").toggle();
-});
+  $("#nav-icon").click(function() {
+    if (opened) {
+      $("#nav-icon").text("expand_more")
+      opened = false;
+    } else {
+      $("#nav-icon").text("close")
+      opened = true;
+    }
+    $(".menu").toggle();
+  });
 
-$("#change-subject").click(function() {
-  $(".menu").toggle();
-  $("#subjects-browse").html("<span>History</br></span>");
-  $("#switch").html("<span>Change region</span>");
-});
-
-
+  $("#change-subject").click(function() {
+    $(".menu").toggle();
+    $("#subjects-browse").html("<span>History</br></span>");
+    $("#switch").html("<span>Change region</span>");
+  });
 </script>
+
+
+<div class="player">
+  <div id="recording-title"><span>My and my dog<span></div>
+
+  <div id="controls">
+
+    <span class="material-icons-outlined md-48" id="nav-icon">skip_previous</span>
+
+    <span class="material-icons-outlined md-48" id="nav-icon">pause</span>
+
+    <span class="material-icons-outlined md-48" id="nav-icon">play_arrow</span>
+
+    <span class="material-icons-outlined md-48" id="nav-icon">skip_next</span>
+
+  </div>
+
+</div>
