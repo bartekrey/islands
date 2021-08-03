@@ -75,8 +75,6 @@ function draw() {
 
   plywX = plywX + 0.01;
   plywY = plywY + 0.01;
-
-
 }
 
 function Wyspa(plik) {
