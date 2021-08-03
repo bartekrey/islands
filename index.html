@@ -74,8 +74,6 @@
   let islands = [];
   let  bx = 0;
   let  by = 0;
-  let  plywX = 0.0;
-  let  plywY = 0.0;
 
   function windowResized(){
     resizeCanvas(window.innerWidth, window.innerHeight);
@@ -86,7 +84,7 @@
 
     for (i = 0; i <= 11; i++) {
       numerek = i + 1;
-      shapes[i] = loadImage("./shapes/" + numerek + ".png");
+      shapes[i] = loadImage("./wyspy/" + numerek + ".png");
     }
   }
 
@@ -94,7 +92,7 @@
     pixelDensity(1)
 
     canvas = createCanvas(window.innerWidth, window.innerHeight);
-    canvas.parent("body");
+    //canvas.parent("body");
 
     textFont("Averia Sans Libre");
     textAlign(CENTER);
@@ -107,7 +105,7 @@
   function draw() {
 
     if (windowWidth > windowHeight) {
-       u = windowWidth/48;
+       u = windowWidth/24;
     } else {
        u = windowHeight/24;
     }
@@ -118,7 +116,7 @@
     noFill();
     stroke(32);
     strokeWeight(0.5);
-    let diameter = u*7;
+    let diameter = u*8;
     circle(0, 0, diameter);
 
     for (let i = 1; i <= 12; i++) {
@@ -133,16 +131,14 @@
     }
 
     for (i = 0; i < 12; i++) {
-      islands[i].draw(u*5);
+      islands[i].draw(u*10);
     }
 
     fill(32);
     noStroke();
     textSize(u);
-    text("Listen to\nthe Islands", noise(plywX)*10, 0);
-
-    plywX = plywX + 0.01;
-    plywY = plywY + 0.01;
+    textAlign(CENTER, CENTER);
+    text("Listen to\nthe Islands", 0, 0);
   }
 
   function Wyspa(plik) {
@@ -152,11 +148,10 @@
     this.x = random(-windowWidth, windowWidth);
     this.y = random(-windowHeight, windowHeight);
 
+    this.region = []
+
     this.draw = function (size) {
-      push();
-      translate(-this.width / 2, -this.height / 2);
       image(this.plik, this.x, this.y, size, size);
-      pop();
     };
   }
 
