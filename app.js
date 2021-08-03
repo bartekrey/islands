@@ -32,7 +32,7 @@ function setup() {
   }
 
   soundFormats('ogg', 'mp3');
-  ocean = loadSound('sea-sound.mp3', ocean.loop(0, 1, 0.5));
+  ocean = loadSound('sea-sound.mp3', loop(0, 1, 0.5));
 }
 
 function draw() {
