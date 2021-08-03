@@ -38,7 +38,7 @@ function setup() {
 function draw() {
 
   if (windowWidth > windowHeight) {
-     u = windowWidth/24;
+     u = windowWidth/48;
   } else {
      u = windowHeight/24;
   }
