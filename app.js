@@ -45,11 +45,11 @@ function draw() {
      u = windowHeight/24;
   }
 
-  textSize(u);
   background(224);
   translate(windowWidth / 2+bx, windowHeight /2 +by);
 
   noFill();
+  stroke(32);
   strokeWeight(0.5);
   let diameter = u*7;
   circle(0, 0, diameter);
@@ -71,6 +71,7 @@ function draw() {
 
   fill(32);
   noStroke();
+  textSize(u);
   text("Listen to\nthe Islands", noise(plywX)*10, 0);
 
   plywX = plywX + 0.01;
