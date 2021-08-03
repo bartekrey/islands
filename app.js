@@ -4,7 +4,6 @@ let  bx = 0;
 let  by = 0;
 let  plywX = 0.0;
 let  plywY = 0.0;
-let ocean;
 
 function windowResized(){
   resizeCanvas(window.innerWidth, window.innerHeight);
