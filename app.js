@@ -16,6 +16,8 @@ function preload() {
     numerek = i + 1;
     shapes[i] = loadImage("./shapes/" + numerek + ".png");
   }
+  soundFormats('ogg', 'mp3');
+  let ocean = loadSound('sea-sound.mp3', );
 }
 
 function setup() {
@@ -30,9 +32,8 @@ function setup() {
   for (i = 0; i < 12; i++) {
     islands[i] = new Wyspa (shapes[i]);
   }
-
-  soundFormats('ogg', 'mp3');
-  let ocean = loadSound('sea-sound.mp3', loop(0, 1, 0.5));
+  
+  ocean.loop(0, 1, 0.5);
 }
 
 function draw() {
