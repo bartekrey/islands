@@ -90,8 +90,8 @@ function Wyspa(plik) {
   this.plik = plik;
   this.width = plik.width;
   this.height = plik.height;
-  this.x = random(-960 , 960);
-  this.y = random(-540, 540);
+  this.x = random(-windowWidt , windowWidth);
+  this.y = random(-windowHeight, windowHeight);
 
   this.draw = function (size) {
     push();
