@@ -11,8 +11,7 @@ function windowResized(){
 
 
 function preload() {
-  soundFormats('ogg', 'mp3');
-  ocean = loadSound('sea-sound.mp3');
+
   for (i = 0; i <= 11; i++) {
     numerek = i + 1;
     shapes[i] = loadImage("./shapes/" + numerek + ".png");
@@ -21,8 +20,7 @@ function preload() {
 
 function setup() {
   pixelDensity(1)
-  ocean.setVolume(0.5);
-  ocean.loop();
+
   canvas = createCanvas(window.innerWidth, window.innerHeight);
   canvas.parent("body");
 
@@ -32,6 +30,11 @@ function setup() {
   for (i = 0; i < 12; i++) {
     islands[i] = new Wyspa (shapes[i]);
   }
+
+  soundFormats('ogg', 'mp3');
+  ocean = loadSound('sea-sound.mp3');
+  ocean.setVolume(0.5);
+  ocean.loop();
 
 }
 
@@ -46,11 +49,6 @@ function draw() {
   textSize(u);
   background(224);
   translate(windowWidth / 2+bx, windowHeight /2 +by);
-
-  fill(32);
-  noStroke();
-  text("Archipelago", noise(plywX)*10, 0);
-  plusik = new Plusik(noise(plywX)*10, u, u);
 
   noFill();
   strokeWeight(0.5);
@@ -72,8 +70,15 @@ function draw() {
     islands[i].draw(u*5);
   }
 
+  fill(32);
+  noStroke();
+  text("Archipelago", noise(plywX)*10, 0);
+  plusik = new Plusik(noise(plywX)*10, u, u);
+
   plywX = plywX + 0.01;
   plywY = plywY + 0.01;
+
+
 }
 
 function Plusik(x, y, size) {
