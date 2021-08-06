@@ -70,10 +70,15 @@
     $("#switch").html("<span>Change region</span>");
   });
 
+
+
+
   let shapes = [];
   let islands = [];
   let  bx = 0;
   let  by = 0;
+  let beginning = true;
+  let transparency = 100;
 
   function windowResized(){
     resizeCanvas(window.innerWidth, window.innerHeight);
@@ -91,7 +96,7 @@
     pixelDensity(1)
 
     canvas = createCanvas(window.innerWidth, window.innerHeight);
-    //canvas.parent("body");
+    canvas.parent("body");
 
     textFont("Averia Sans Libre");
     textAlign(CENTER);
@@ -137,11 +142,26 @@
       islands[i].draw(u*10);
     }
 
-    fill(32);
-    noStroke();
-    textSize(u);
-    textAlign(CENTER, CENTER);
-    text("Listen to\nthe Islands", 0, 0);
+if (beginning) {
+  fill(32);
+  noStroke();
+  textSize(u);
+  textAlign(CENTER, CENTER);
+  text("Listen to\nthe Islands", 0, 0);
+  let transition_done = false;
+} if else (beginning == false && transition_done == false) {
+  fill(32, transparency)
+  noStroke();
+  textSize(u);
+  textAlign(CENTER, CENTER);
+  text("Listen to\nthe Islands", 0, 0);
+  transparency = transparency - 1;
+  if (transparency == 0) {
+    transition_done = true;
+  }
+}
+
+
   }
 
   function Wyspa(plik) {
@@ -173,6 +193,7 @@
 
   function touchEnded() {
     locked = false;
+    beginning = false;
   }
 
   function mousePressed() {
@@ -190,5 +211,6 @@
 
   function mouseReleased() {
     locked = false;
+    beginning = false;
   }
 </script>
