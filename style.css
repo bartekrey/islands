@@ -2,7 +2,6 @@
   display: flex;
   flex-flow: column nowrap;
 
-
   position: fixed;
   margin: 0 auto;
   top: 1em;
@@ -11,7 +10,7 @@
 
 .legenda {
   font-family: "Ubuntu", sans-serif;
-  font-size: 1em;
+  font-size: 18px;
 
   display: flex;
   flex-flow: column nowrap;
@@ -26,7 +25,7 @@
 
 .title {
   font-family: "Averia Sans Libre", serif;
-  font-size: 2em;
+  font-size: 36px;
   display: flex;
   flex-flow: row nowrap;
 
