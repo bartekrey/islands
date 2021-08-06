@@ -71,31 +71,31 @@
   });
 
 
-
-
   let shapes = [];
   let islands = [];
-  let  bx = 0;
-  let  by = 0;
+  let islands_x_positions = [];
+  let islands_y_positions = [];
+  let bx = 0;
+  let by = 0;
   let beginning = true;
   let transparency = 255;
   let transition_done = false;
 
+  let u = window.innerWidth / 48;
+  let island_size = u * 10;
 
-  function windowResized(){
+  function windowResized() {
     resizeCanvas(window.innerWidth, window.innerHeight);
   }
 
-
   function preload() {
-
     for (i = 0; i < 12; i++) {
       shapes[i] = loadImage("./shapes/" + i + ".png");
     }
   }
 
   function setup() {
-    pixelDensity(1)
+    pixelDensity(1);
 
     canvas = createCanvas(window.innerWidth, window.innerHeight);
     canvas.parent("body");
@@ -104,21 +104,33 @@
     textAlign(CENTER);
 
     for (i = 0; i < 12; i++) {
-      islands[i] = new Wyspa (shapes[i]);
+      islands[i] = new Wyspa(shapes[i]);
+
+      islands_x_positions.push(islands[i].x);
+      for (j = 1; j <= island_size; j++) {
+        islands_x_positions.push(islands[i].x + j);
+      }
+
+      islands_y_positions.push(islands[i].y);
+      for (k = 1; k <= island_size; k++) {
+        islands_y_positions.push(islands[i].y + k);
+      }
+      console.log(islands_y_positions);
     }
   }
 
   function draw() {
-
-    u = windowWidth/48;
+    let u = window.innerWidth / 48;
+    let island_size = u * 10;
+    textSize(u);
 
     background(224);
-    translate(windowWidth / 2+bx, windowHeight /2 +by);
+    translate(windowWidth / 2 + bx, windowHeight / 2 + by);
 
     noFill();
     stroke(32);
     strokeWeight(0.5);
-    let diameter = u*8;
+    let diameter = u * 8;
     circle(0, 0, diameter);
 
     for (let i = 1; i <= 12; i++) {
@@ -128,43 +140,39 @@
     for (let i = 1; i <= 12; i++) {
       push();
       rotate(i * (TWO_PI / 12));
-      line(0, diameter / 2, 0, windowHeight*2);
+      line(0, diameter / 2, 0, windowHeight * 2);
       pop();
     }
 
     for (i = 0; i < 12; i++) {
-      islands[i].draw(u*10);
+      islands[i].draw(u * 10);
     }
 
-if (beginning) {
-  fill(32);
-  noStroke();
-  textSize(u);
-  textAlign(CENTER, CENTER);
-  text("Listen to\nthe Islands", 0, 0);
-} else if (beginning == false && transition_done == false) {
-  fill(32, transparency)
-  noStroke();
-  textSize(u);
-  textAlign(CENTER, CENTER);
-  text("Listen to\nthe Islands", 0, 0);
-  transparency = transparency - 1;
-  if (transparency == 0) {
-    transition_done = true;
-  }
-}
-
-
+    if (beginning) {
+      fill(32);
+      noStroke();
+      textAlign(CENTER, CENTER);
+      text("Listen to\nthe Islands", 0, 0);
+    } else if (beginning == false && transition_done == false) {
+      fill(32, transparency);
+      noStroke();
+      textAlign(CENTER, CENTER);
+      text("Listen to\nthe Islands", 0, 0);
+      transparency = transparency - 2;
+      if (transparency == 0) {
+        transition_done = true;
+      }
+    }
   }
 
   function Wyspa(plik) {
     this.plik = plik;
     this.width = plik.width;
     this.height = plik.height;
-    this.x = random(-960, 960);
-    this.y = random(-540, 540);
+    this.x = floor(random(-960, 960));
+    this.y = floor(random(-540, 540));
 
-    this.region = []
+    this.region = [];
 
     this.draw = function (size) {
       image(this.plik, this.x, this.y, size, size);
@@ -175,6 +183,9 @@ if (beginning) {
     locked = true;
     xOffset = mouseX - bx;
     yOffset = mouseY - by;
+    if (islands_x_positions.includes(floor(mouseX))) {
+      console.log("TAK!");
+    }
   }
 
   function touchMoved() {
@@ -193,6 +204,12 @@ if (beginning) {
     locked = true;
     xOffset = mouseX - bx;
     yOffset = mouseY - by;
+
+    if (islands_x_positions.includes(floor(mouseX))) {
+      if (islands_y_positions.includes(floor(mouseY))) {
+        console.log("NIE!");
+      }
+    }
   }
 
   function mouseDragged() {
@@ -206,4 +223,5 @@ if (beginning) {
     locked = false;
     beginning = false;
   }
+
 </script>
