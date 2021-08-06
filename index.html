@@ -78,7 +78,9 @@
   let  bx = 0;
   let  by = 0;
   let beginning = true;
-  let transparency = 100;
+  let transparency = 255;
+  let transition_done = false;
+
 
   function windowResized(){
     resizeCanvas(window.innerWidth, window.innerHeight);
@@ -140,7 +142,6 @@ if (beginning) {
   textSize(u);
   textAlign(CENTER, CENTER);
   text("Listen to\nthe Islands", 0, 0);
-  let transition_done = false;
 } else if (beginning == false && transition_done == false) {
   fill(32, transparency)
   noStroke();
