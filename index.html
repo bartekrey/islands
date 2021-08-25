@@ -86,6 +86,19 @@
 
   let u = window.innerWidth / 48;
   let island_size = u * 10;
+  let island_files_list = [
+  "https://github.com/meosr/islands/blob/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/0.png",
+  "https://github.com/meosr/islands/blob/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/1.png",
+  "https://github.com/meosr/islands/blob/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/2.png",
+  "https://github.com/meosr/islands/blob/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/3.png",
+  "https://github.com/meosr/islands/blob/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/4.png",
+  "https://github.com/meosr/islands/blob/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/5.png",
+  "https://github.com/meosr/islands/blob/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/6.png",
+  "https://github.com/meosr/islands/blob/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/7.png",
+  "https://github.com/meosr/islands/blob/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/8.png",
+  "https://github.com/meosr/islands/blob/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/9.png",
+  "https://github.com/meosr/islands/blob/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/10.png",
+  "https://github.com/meosr/islands/blob/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/11.png"]
 
   function windowResized() {
     resizeCanvas(window.innerWidth, window.innerHeight);
@@ -93,7 +106,7 @@
 
   function preload() {
     for (i = 0; i < 12; i++) {
-      shapes[i] = loadImage("./shapes/" + i + ".png");
+      shapes[i] = loadImage(island_files_list[i]);
     }
   }
 
