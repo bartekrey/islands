@@ -55,14 +55,14 @@
   flex-flow: column nowrap;
 
   justify-content: space-around;
-  align-items: flex-start;
+  align-items: center;
   align-content: center;
 
   padding: 0.5em;
 }
 
 .subpages span {
-  padding: 0.3em 0.5em;
+  padding: 0em 0.5em;
 }
 
 .lang {
