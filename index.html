@@ -67,12 +67,6 @@
     $(".menu").toggle();
   });
 
-  $("#change-subject").click(function() {
-    $(".menu").toggle();
-    $("#subjects-browse").html("<span>History</br></span>");
-    $("#switch").html("<span>Change region</span>");
-  });
-
 
   let shapes = [];
   let islands = [];
@@ -87,18 +81,18 @@
   let u = window.innerWidth / 48;
   let island_size = u * 10;
   let island_files_list = [
-  "https://github.com/meosr/islands/blob/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/0.png",
-  "https://github.com/meosr/islands/blob/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/1.png",
-  "https://github.com/meosr/islands/blob/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/2.png",
-  "https://github.com/meosr/islands/blob/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/3.png",
-  "https://github.com/meosr/islands/blob/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/4.png",
-  "https://github.com/meosr/islands/blob/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/5.png",
-  "https://github.com/meosr/islands/blob/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/6.png",
-  "https://github.com/meosr/islands/blob/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/7.png",
-  "https://github.com/meosr/islands/blob/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/8.png",
-  "https://github.com/meosr/islands/blob/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/9.png",
-  "https://github.com/meosr/islands/blob/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/10.png",
-  "https://github.com/meosr/islands/blob/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/11.png"]
+  "https://raw.githubusercontent.com/meosr/islands/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/0.png",
+  "https://raw.githubusercontent.com/meosr/islands/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/1.png",
+  "https://raw.githubusercontent.com/meosr/islands/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/2.png",
+  "https://raw.githubusercontent.com/meosr/islands/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/3.png",
+  "https://raw.githubusercontent.com/meosr/islands/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/4.png",
+  "https://raw.githubusercontent.com/meosr/islands/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/5.png",
+  "https://raw.githubusercontent.com/meosr/islands/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/6.png",
+  "https://raw.githubusercontent.com/meosr/islands/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/7.png",
+  "https://raw.githubusercontent.com/meosr/islands/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/8.png",
+  "https://raw.githubusercontent.com/meosr/islands/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/9.png",
+  "https://raw.githubusercontent.com/meosr/islands/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/10.png",
+  "https://raw.githubusercontent.com/meosr/islands/20c8181814be7e06c108faba6e3f6c21ddd908f2/shapes/11.png"]
 
   function windowResized() {
     resizeCanvas(window.innerWidth, window.innerHeight);
@@ -140,11 +134,11 @@
     let island_size = u * 10;
     textSize(u);
 
-    background(224);
+    background("#1C3225");
     translate(windowWidth / 2 + bx, windowHeight / 2 + by);
 
     noFill();
-    stroke(32);
+    stroke(255);
     strokeWeight(0.5);
     let diameter = u * 10;
     circle(0, 0, diameter);
@@ -165,12 +159,12 @@
     }
 
     if (beginning) {
-      fill(32);
+      fill(255);
       noStroke();
       textAlign(CENTER, CENTER);
       text("Listen to\nthe Islands", 0, 0);
     } else if (beginning == false && transition_done == false) {
-      fill(32, transparency);
+      fill(255, transparency);
       noStroke();
       textAlign(CENTER, CENTER);
       text("Listen to\nthe Islands", 0, 0);
